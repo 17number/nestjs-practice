@@ -18,6 +18,7 @@ export class CatsController {
   @Get('redirect')
   @Redirect('/cats')
   redirect() {
-    console.log('redirect');
+    console.log('redirect override');
+    return { url: '/', statusCode: 301 };
   }
 }
