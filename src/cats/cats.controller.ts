@@ -1,9 +1,11 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post, Req } from '@nestjs/common';
+import { FastifyRequest } from 'fastify';
 
 @Controller('cats')
 export class CatsController {
   @Get()
-  findAll(): string {
+  findAll(@Req() request: FastifyRequest): string {
+    console.log({request});
     return 'All cats';
   }
 
